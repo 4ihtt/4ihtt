@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4ih.tt - Vibe Gangster ❤️</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ... (mesmo CSS de antes, omitido aqui para economizar espaço) ... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+            background: #111;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            position: relative;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://i.pinimg.com/originals/4c/9b/1a/4c9b1a4c60e3f1ae0dfeec3a706c2323.jpg') no-repeat center center;
+            background-size: cover;
+            filter: brightness(0.3);
+            z-index: -2;
+        }
+
+        .container {
+            background: rgba(0,0,0,0.7);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.15);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .profile h1 {
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 0 0 12px rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .profile h1 i {
+                color: #ff0000;
+                font-size: 38px;
+            }
+
+        .profile p {
+            font-size: 16px;
+            opacity: 0.85;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .link-button {
+            background: rgba(255, 0, 0, 0.6);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+        }
+
+            .link-button i {
+                margin-right: 12px;
+                font-size: 22px;
+            }
+
+            .link-button:hover {
+                background: rgba(255, 0, 0, 0.85);
+                box-shadow: 0 0 15px #ff0000;
+            }
+
+        .support-text {
+            font-size: 14px;
+            color: #ccc;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-style: italic;
+        }
+
+            .support-text i {
+                color: #ff0000;
+                font-size: 18px;
+            }
+
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            color: #ff3b3b;
+            font-size: 20px;
+            animation-name: fall;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-image"></div>
+
+    <div class="container">
+        <div class="profile fade-in">
+            <img src="https://i.pinimg.com/736x/f8/02/a6/f802a67b3e2bac80fb00a958293922de.jpg" alt="Ícone 4ih.tt" />
+            <h1><i class="fas fa-heart"></i> 4ih.tt</h1>
+            <p>Aqui estão todas as redes oficiais da 4ih.tt — conecte-se com a gente</p>
+        </div>
+
+        <div class="links fade-in">
+            <a class="link-button" href="https://wa.me/13652556933" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Contato WhatsApp
+            </a>
+
+            <a class="link-button" href="https://chat.whatsapp.com/LTyQidMcTLoHOrnuDotbKy?mode=ac_t" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Grupo 01
+            </a>
+
+            <a class="link-button instagram" href="https://www.instagram.com/4ih.tt/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram @4ih.tt
+            </a>
+        </div>
+
+        <div class="support-text fade-in">
+            <i class="fas fa-headset"></i>
+            Caso precise de ajuda, nossa equipe está pronta para atender você.
+        </div>
+    </div>
+
+    <!-- Corações animados via JS -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+            heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+            heart.style.opacity = Math.random();
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.innerHTML = '❤️';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+    <!-- Música de fundo -->
+    <audio autoplay loop muted id="background-audio">
+        <source src="https://cdn.pixabay.com/download/audio/2021/11/02/audio_29bb317b8c.mp3?filename=lofi-chill-11343.mp3" type="audio/mpeg" />
+        Seu navegador não suporta áudio HTML5.
+    </audio>
+
+    <script>
+        // Permite ativar o som ao toque/click no celular (autoplay bloqueia som)
+        document.body.addEventListener('click', () => {
+            const audio = document.getElementById('background-audio');
+            if (audio.paused) {
+                audio.muted = false;
+                audio.play();
+            }
+        }, { once: true });
+    </script>
+
+</body>
+</html>
