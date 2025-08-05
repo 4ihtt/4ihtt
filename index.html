@@ -1,4 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>4ih.tt - Redes Oficiais</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        @media (hover: hover) and (pointer: fine) {
+            body {
+                cursor: url('https://cur.cursors-4u.net/cursors/cur-11/cur1035.cur'), auto;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+            background: #111;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://i.pinimg.com/originals/4c/9b/1a/4c9b1a4c60e3f1ae0dfeec3a706c2323.jpg') no-repeat center center;
+            background-size: cover;
+            filter: brightness(0.3);
+            z-index: -2;
+        }
+
+        .container {
+            background: rgba(0,0,0,0.75);
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255,255,255,0.15);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            object-fit: cover;
+            box-shadow: 0 0 12px rgba(255,255,255,0.6);
+            margin: 0 auto 15px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+            .profile img:hover {
+                transform: scale(1.05);
+            }
+
+        .profile h1 {
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 0 0 12px rgba(0,0,0,0.8);
+            margin-bottom: 8px;
+        }
+
+        .profile p {
+            font-size: 16px;
+            opacity: 0.85;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+            .social-icons a {
+                color: white;
+                font-size: 28px;
+                transition: color 0.3s ease, transform 0.3s ease;
+                filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+            }
+
+                .social-icons a:hover,
+                .social-icons a:focus {
+                    color: #ff0000;
+                    transform: scale(1.2);
+                    filter: drop-shadow(0 0 8px #ff0000);
+                    outline: none;
+                    cursor: pointer;
+                }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 30px 0 25px;
+        }
+
+        .link-button {
+            background: rgba(255, 0, 0, 0.65);
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+            user-select: none;
+            cursor: inherit;
+        }
+
+            .link-button i {
+                margin-right: 12px;
+                font-size: 22px;
+            }
+
+            .link-button:hover, .link-button:focus {
+                background: rgba(255, 0, 0, 0.85);
+                box-shadow: 0 0 20px #ff0000;
+                transform: scale(1.05);
+            }
+
+        .support-text {
+            font-size: 14px;
+            color: #ccc;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-style: italic;
+            user-select: none;
+        }
+
+            .support-text i {
+                color: #ff0000;
+                font-size: 18px;
+            }
+    </style>
+</head>
 <body>
+
     <div class="background-image"></div>
 
     <div class="container">
@@ -46,16 +215,28 @@
     </audio>
 
     <script>
-        // Efeito sonoro sem direitos autorais
+        // Efeito sonoro sem direitos autorais que toca SEMPRE que clicar no botão
         const clickSound = new Audio('https://freesound.org/data/previews/256/256113_3263906-lq.mp3');
         clickSound.volume = 0.3;
 
-        // Toca o som somente ao clicar nos botões de link
         document.querySelectorAll('.link-button').forEach(btn => {
             btn.addEventListener('click', () => {
+                clickSound.pause();
                 clickSound.currentTime = 0;
                 clickSound.play();
             });
         });
+
+        // Opção: desmutar a música ambiente no primeiro clique em qualquer botão
+        const bgMusic = document.getElementById('bg-music');
+        document.querySelectorAll('.link-button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (bgMusic.muted) {
+                    bgMusic.muted = false;
+                    bgMusic.play();
+                }
+            }, { once: true });
+        });
     </script>
 </body>
+</html>
