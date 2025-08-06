@@ -118,34 +118,42 @@
             flex-direction: column;
             gap: 18px;
             margin: 30px 0 25px;
+            align-items: center;
         }
 
+        /* Botão cinza estiloso */
         .link-button {
-            background: rgba(255, 0, 0, 0.65);
-            padding: 15px 20px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, #4a4a4a, #7d7d7d);
+            padding: 16px 30px;
+            border-radius: 35px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            font-weight: 600;
+            color: #f0f0f0;
+            font-weight: 700;
             font-size: 18px;
             text-decoration: none;
-            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-            box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+            box-shadow: 0 4px 15px rgba(125, 125, 125, 0.6), inset 0 -2px 6px rgba(255,255,255,0.1);
+            transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.25s ease;
             user-select: none;
-            cursor: inherit;
+            cursor: pointer;
+            letter-spacing: 1.1px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
         }
 
             .link-button i {
-                margin-right: 12px;
-                font-size: 22px;
+                margin-right: 14px;
+                font-size: 24px;
+                filter: drop-shadow(0 0 4px rgba(255,255,255,0.3));
             }
 
-            .link-button:hover, .link-button:focus {
-                background: rgba(255, 0, 0, 0.85);
-                box-shadow: 0 0 20px #ff0000;
-                transform: scale(1.05);
+            .link-button:hover,
+            .link-button:focus {
+                background: linear-gradient(135deg, #6a6a6a, #a0a0a0);
+                box-shadow: 0 6px 20px rgba(160, 160, 160, 0.85), inset 0 -2px 8px rgba(255,255,255,0.2);
+                transform: scale(1.1) translateY(-2px);
+                outline: none;
             }
 
         .support-text {
@@ -161,7 +169,7 @@
         }
 
             .support-text i {
-                color: #ff0000;
+                color: #a0a0a0;
                 font-size: 18px;
             }
     </style>
@@ -174,40 +182,23 @@
         <div class="profile fade-in">
             <img src="https://i.pinimg.com/736x/f8/02/a6/f802a67b3e2bac80fb00a958293922de.jpg" alt="Ícone 4ih.tt" />
             <h1>4ih.tt</h1>
-            <p>Conecte-se conosco nas redes oficiais do 4ih.tt</p>
+            <p>Conecte-se nas redes oficiais 4ih.tt</p>
 
             <div class="social-icons">
                 <a href="https://www.tiktok.com/@4ih.tt" target="_blank" rel="noopener noreferrer" title="TikTok 4ih.tt">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://wa.me/13652556933" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.instagram.com/4ih.tt/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <a href="https://www.instagram.com/4ih.tt/" target="_blank" rel="noopener noreferrer" title="Instagram 4ih.tt">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
         </div>
 
         <div class="links fade-in">
-            <a class="link-button" href="https://wa.me/13652556933" target="_blank" rel="noopener noreferrer" tabindex="1">
-                <i class="fab fa-whatsapp"></i>  WhatsApp
-            </a>
-
-            <a class="link-button" href="https://chat.whatsapp.com/LTyQidMcTLoHOrnuDotbKy?mode=ac_t" target="_blank" rel="noopener noreferrer" tabindex="2">
-                <i class="fab fa-whatsapp"></i> Grupo 01
-            </a>
-
-            <a class="link-button instagram" href="https://www.instagram.com/4ih.tt/" target="_blank" rel="noopener noreferrer" tabindex="3">
+            <a class="link-button instagram" href="https://www.instagram.com/4ih.tt/" target="_blank" rel="noopener noreferrer" tabindex="1">
                 <i class="fab fa-instagram"></i> INSTAGRAM
             </a>
         </div>
-
-        <div class="support-text fade-in">
-            <i class="fas fa-headset"></i>
-            Caso precise de ajuda, nossa equipe está pronta para atender você.
-        </div>
-    </div>
 
     <!-- Música de fundo mutada para autoplay funcionar -->
     <audio id="bg-music" autoplay loop muted preload="auto">
